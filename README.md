@@ -1,3 +1,3 @@
 # Proy-Flutter
 
-Proyectos Simples creados en Flutter
+Proyectos simples creados en Flutter
