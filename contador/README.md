@@ -1,3 +1,0 @@
-# contador
-
-Simple contador
