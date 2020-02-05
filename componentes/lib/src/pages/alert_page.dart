@@ -36,8 +36,8 @@ class AlertPage extends StatelessWidget {
         return AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           title: Text('Alerta'),
-          content: ListView(
-            //mainAxisSize: MainAxisSize.min, Para column
+          content: Column(
+            mainAxisSize: MainAxisSize.min, 
             children: <Widget>[
               Text('Este es el logo de Flutter, dentro de la alerta'),
               FlutterLogo(size: 100.0,),
