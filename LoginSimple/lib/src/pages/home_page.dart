@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:formvalidation/src/bloc/provider.dart';
+import 'package:LoginSimple/src/bloc/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:formvalidation/src/bloc/provider.dart';
+import 'package:LoginSimple/src/bloc/provider.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -70,10 +70,9 @@ class LoginPage extends StatelessWidget {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              icon: Icon(Icons.alternate_email, color: Colors.deepPurple),
+              icon: Icon(Icons.email, color: Colors.red),
               hintText: 'ejemplo@correo.com',
               labelText: 'Correo electrónico',
-              counterText: snapshot.data,
               errorText: snapshot.error,
             ),
             onChanged: bloc.changeEmail, //Cada vez que se escriba se emite un nuevo valor al stream
@@ -95,7 +94,6 @@ class LoginPage extends StatelessWidget {
             decoration: InputDecoration(
               icon: Icon(Icons.lock_outline, color: Colors.deepPurple),
               labelText: 'Contraseña',
-              counterText: snapshot.data,
               errorText: snapshot.error,
             ),
             onChanged: (value) => bloc.changePassword(value),
