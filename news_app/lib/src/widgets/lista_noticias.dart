@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/src/models/news_models.dart';
 import 'package:news_app/src/theme/tema.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListaNoticias extends StatelessWidget {
 
@@ -37,7 +38,7 @@ class _Noticia extends StatelessWidget {
         _TarjetaTitulo(noticia),
         _TarjetaImagen(noticia),
         _TarjetaBody(noticia),
-        _TarjetaBotones(),
+        _TarjetaBotones(noticia),
         SizedBox(height: 10),
         Divider(),
 
@@ -47,6 +48,10 @@ class _Noticia extends StatelessWidget {
 }
 
 class _TarjetaBotones extends StatelessWidget {
+  final Article noticia;
+
+  const _TarjetaBotones(this.noticia);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,7 +66,9 @@ class _TarjetaBotones extends StatelessWidget {
           ),
           SizedBox(width: 20),
           RawMaterialButton(
-            onPressed: (){},
+            onPressed: (){ 
+              launch(noticia.url);
+            },
             fillColor: Colors.blue,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: Icon(Icons.more),

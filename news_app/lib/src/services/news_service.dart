@@ -53,6 +53,7 @@ class NewsService with ChangeNotifier{
 
     final resp = await http.get(url);
     final newsResponse = newsResponseFromJson(resp.body);
+    print(newsResponse.articles);
     this.headlines.addAll(newsResponse.articles);
 
     notifyListeners();
@@ -67,6 +68,7 @@ class NewsService with ChangeNotifier{
     final url = '$_URL_NEWS/top-headlines?apiKey=$_APIKEY&country=mx&category=$category';
     final resp = await http.get(url);
     final newsResponse = newsResponseFromJson(resp.body);
+    print(newsResponse.articles);
     this.categoryArticles[category].addAll(newsResponse.articles);
     this._isLoading = false;
     notifyListeners();
